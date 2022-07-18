@@ -1,0 +1,6 @@
+{
+  "serviceRole": "acs:ram::1784661884108444:role/aliyunfcdefaultrole",
+  "policies": [
+    "AliyunFCDefaultRolePolicy"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "serviceName": "midway-blog",
+  "functionNames": [
+    "midway-blog/all"
+  ],
+  "domains": [
+    "all.midway-blog.1784661884108444.cn-hangzhou.fc.devsapp.net"
+  ]
+}

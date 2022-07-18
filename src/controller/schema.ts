@@ -4,10 +4,13 @@ import {
   Controller,
   Get,
   Post,
-  Body,
+  Body, Validate,
+  ALL,
 } from '@midwayjs/decorator';
-import { Context } from '@midwayjs/faas';
-import { SchemaService } from '../service/schema';
+import {Context} from '@midwayjs/faas';
+import {SchemaSaveDTO} from '../dto/schema';
+import {SchemaService} from '../service/schema';
+import { getStandardResponse } from '../util/common';
 
 @Provide()
 @Controller('/api/schema/')
@@ -19,14 +22,19 @@ export class SchemaController {
   schemaService: SchemaService;
 
   @Get('/getLatestOne')
-  async get() {
+  async getLatestOne() {
     const result = await this.schemaService.getLatestOne();
-    return result;
+    return getStandardResponse(true, result);
   }
 
   @Post('/save')
-  async save(@Body('schema') schema: string) {
-    const result = await this.schemaService.save(schema);
-    return result;
+  @Validate()
+  // async save(@Body('schema') schema: string) {
+  //   const result = await this.schemaService.save(schema);
+  //   return result;
+  // }
+  async save(@Body(ALL) bodyObj: SchemaSaveDTO) {
+    const result = await this.schemaService.save(bodyObj.schema);
+    return getStandardResponse(true, result);
   }
 }

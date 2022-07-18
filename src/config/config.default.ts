@@ -1,10 +1,9 @@
 export const orm = {
   type: 'mysql',
-  // host: 'localhost',
-  host:'121.40.77.89',
+  host: 'localhost',
   port: 3306,
   username: 'root',
-  password: 'Zhang@666',
+  password: 'root',
   database: 'blog',
   synchronize: true,
   logging: false,

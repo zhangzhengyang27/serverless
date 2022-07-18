@@ -21,6 +21,8 @@
     "@midwayjs/decorator": "^2.3.0",
     "@midwayjs/faas": "^2.3.0",
     "@midwayjs/orm": "^2.13.3",
+    "authing-js-sdk": "^4.23.33",
+    "axios": "^0.27.2",
     "mysql2": "^2.3.0",
     "typeorm": "^0.2.37"
   },

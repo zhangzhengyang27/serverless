@@ -1,4 +1,5 @@
-import { Inject, Provide, Controller, Get, Post } from '@midwayjs/decorator';
+import axios from 'axios';
+import { Inject, Provide, Controller, Get } from '@midwayjs/decorator';
 import { Context } from '@midwayjs/faas';
 
 @Provide()
@@ -8,17 +9,18 @@ export class HomeController {
   ctx: Context;
 
   @Get('/')
-  async hello() {
-    return 'Hello Dell';
+  async home() {
+    const result = await axios.get(
+      'http://tag.zhangzhengyang.com/blog/index.html'
+    );
+    return result.data;
   }
 
-  @Get('/get')
-  async get() {
-    return this.ctx.query;
-  }
-
-  @Post('/post')
-  async post() {
-    return this.ctx.method;
+  @Get('/admin')
+  async admin() {
+    const result = await axios.get(
+      'http://tag.zhangzhengyang.com/blog/admin.html'
+    );
+    return result.data;
   }
 }

@@ -17,9 +17,12 @@
     "lint:fix": "mwts fix"
   },
   "dependencies": {
-    "@midwayjs/faas": "^2.3.0",
     "@midwayjs/core": "^2.3.0",
-    "@midwayjs/decorator": "^2.3.0"
+    "@midwayjs/decorator": "^2.3.0",
+    "@midwayjs/faas": "^2.3.0",
+    "@midwayjs/orm": "^2.13.3",
+    "mysql2": "^2.3.0",
+    "typeorm": "^0.2.37"
   },
   "devDependencies": {
     "@midwayjs/cli": "^1.2.45",
@@ -27,8 +30,6 @@
     "@midwayjs/fcli-plugin-fc": "^1.2.45",
     "@midwayjs/mock": "^2.8.7",
     "@midwayjs/serverless-app": "^2.8.7",
-    "@midwayjs/serverless-fc-starter": "^2.14.8",
-    "@midwayjs/serverless-fc-trigger": "^2.14.8",
     "@types/jest": "^26.0.10",
     "@types/node": "14",
     "cross-env": "^6.0.0",
